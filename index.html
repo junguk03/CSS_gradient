@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 그라디언트 생성기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS 그라디언트 생성기</h1>
+
+        <!-- 미리보기 -->
+        <div class="preview-section">
+            <div class="preview-box" id="preview"></div>
+        </div>
+
+        <!-- 컨트롤 패널 -->
+        <div class="control-panel">
+            <div class="control-row">
+                <div class="control-group">
+                    <label>그라디언트 타입</label>
+                    <select id="gradientType">
+                        <option value="linear">Linear (선형)</option>
+                        <option value="radial">Radial (원형)</option>
+                        <option value="conic">Conic (원뿔형)</option>
+                    </select>
+                </div>
+                <div class="control-group" id="directionGroup">
+                    <label>방향</label>
+                    <select id="direction">
+                        <option value="to right">가로 →</option>
+                        <option value="to left">가로 ←</option>
+                        <option value="to bottom">세로 ↓</option>
+                        <option value="to top">세로 ↑</option>
+                        <option value="to bottom right">대각선 ↘</option>
+                        <option value="to bottom left">대각선 ↙</option>
+                        <option value="to top right">대각선 ↗</option>
+                        <option value="to top left">대각선 ↖</option>
+                        <option value="custom">커스텀 각도</option>
+                    </select>
+                </div>
+                <div class="control-group" id="angleGroup" style="display: none;">
+                    <label>각도 (°)</label>
+                    <input type="number" id="angle" value="90" min="0" max="360">
+                </div>
+                <div class="control-group" id="radialShapeGroup" style="display: none;">
+                    <label>모양</label>
+                    <select id="radialShape">
+                        <option value="circle">원형 (Circle)</option>
+                        <option value="ellipse">타원형 (Ellipse)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- 색상 리스트 -->
+        <div class="colors-section">
+            <div class="colors-header">
+                <h3>색상 목록</h3>
+                <span id="colorCount">2 / 10</span>
+            </div>
+            <div id="colorList"></div>
+            <button class="add-color-btn" id="addColorBtn">+ 색상 추가</button>
+        </div>
+
+        <!-- 코드 출력 -->
+        <div class="code-section">
+            <div class="code-header">
+                <h3>생성된 CSS 코드</h3>
+                <button class="copy-btn" id="copyBtn">
+                    <span>📋</span> 복사하기
+                </button>
+            </div>
+            <div class="code-box" id="codeOutput"></div>
+        </div>
+
+        <!-- 프리셋 -->
+        <div class="presets-section">
+            <h3>프리셋</h3>
+            <div class="presets-grid" id="presetsGrid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
